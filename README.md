@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Company
 
 ### Overview
@@ -47,7 +46,4 @@ For any questions or support, feel free to open an issue or contact the maintain
 ---
 
 Feel free to modify this description to better fit your project's specific details and requirements.
-=======
- Company [Node.js]
-The Company project is a backend application using Node.js and Express.js. It manages company-related data and operations with features like user authentication, data validation, and error handling. Designed for scalability and maintainability, it follows industry standards for enterprise applications.
->>>>>>> 457d2632190e04529e315dff635d063afe253467
+
