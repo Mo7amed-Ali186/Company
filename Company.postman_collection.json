@@ -1,0 +1,973 @@
+{
+	"info": {
+		"_postman_id": "783bee96-be96-4a38-be59-42136fd6660c",
+		"name": "Company",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26927062",
+		"_collection_link": "https://www.postman.com/altimetry-engineer-834583/workspace/api/collection/26927062-783bee96-be96-4a38-be59-42136fd6660c?action=share&source=collection_link&creator=26927062"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"mo7amed\",\r\n    \"lastName\": \"ali\",\r\n    \"email\": \"varay81640@laym.com\",\r\n    \"password\": \"12Moh@7kk4\",\r\n    \"confirmPassword\":\"12Moh@7kk4\",\r\n    \"dob\": \"2001-06-18\",\r\n    \"mobileNumber\": \"01141283970\",\r\n    \"role\": \"Company_HR\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/auth/signUp",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"auth",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"emailOrMobileNumber\":\"01141283970\",\r\n  \"password\":\"12Moh@7kk4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/auth/logIn",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"auth",
+								"logIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sendCode",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n  \"email\":\"copopi6849@bitofee.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/auth/sendCode",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"auth",
+								"sendCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "softDelete",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\": \"pakokot691@namewok.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/auth/softDelete",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"auth",
+								"softDelete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\": \"niroxop233@namewok.com\", \r\n    \"oldPassword\": \"12Moh@7kk4\",\r\n    \"newPassword\": \"12Moh@7kkll\",\r\n    \"confirmPassword\":\"12Moh@7kkll\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/auth/updatePassword",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"auth",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgetPassword",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n  \"code\":\"77593\", \r\n   \"password\":\"12Moh@7kk4ll\",\r\n  \"confirmPassword\":\"12Moh@7kk4ll\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/auth/forgetPassword/copopi6849@bitofee.com",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"auth",
+								"forgetPassword",
+								"copopi6849@bitofee.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CmpanyAPI",
+			"item": [
+				{
+					"name": "addCompany",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhcmF5ODE2NDBAbGF5bXJvLmNvbSIsImlkIjoiNjVjNDExODgxZmNhODlmZGE1NzM4ZWY1IiwiaWF0IjoxNzA3MzQ4MzkyLCJleHAiOjE3MDk5NDAzOTJ9.a8V9Rko1ErzalDvTfIShh17HdiprDAkYetEEYR6VlIc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\":\"oop\",\r\n    \"industry\":\"applications\",\r\n    \"companyEmail\":\"Body@gmail.com\",\r\n    \"numberOfEmployees\":\"19\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/company/",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"company",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCompany",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlpa2Fsb241MzVAZ2lydGV4LmNvbSIsImlkIjoiNjVjMTcyMmQxNDhmOTRlMzU5NTA2YThhIiwiaWF0IjoxNzA3MTc2NTM0LCJleHAiOjE3MDk3Njg1MzR9.tHJuw3IBoBweLSXOSJtUONXLfqHcwss7EL7FeBiPXVY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"industry\":\"Flutter88\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/company/65c216303e9c2ef383679e9e",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"company",
+								"65c216303e9c2ef383679e9e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "softDelete",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/company/65be1cf6b9f1c3f65de2302b",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"company",
+								"65be1cf6b9f1c3f65de2302b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete company",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlpa2Fsb241MzVAZ2lydGV4LmNvbSIsImlkIjoiNjVjMTcyMmQxNDhmOTRlMzU5NTA2YThhIiwiaWF0IjoxNzA3MTc2NTM0LCJleHAiOjE3MDk3Njg1MzR9.tHJuw3IBoBweLSXOSJtUONXLfqHcwss7EL7FeBiPXVY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/company/65c216303e9c2ef383679e9e",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"company",
+								"65c216303e9c2ef383679e9e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getcompany",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhcmF5ODE2NDBAbGF5bXJvLmNvbSIsImlkIjoiNjVjNDExODgxZmNhODlmZGE1NzM4ZWY1IiwiaWF0IjoxNzA3MzQ4MzkyLCJleHAiOjE3MDk5NDAzOTJ9.a8V9Rko1ErzalDvTfIShh17HdiprDAkYetEEYR6VlIc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{hosts}}/company/getCompany/65c4142008517c8019e65836",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"company",
+								"getCompany",
+								"65c4142008517c8019e65836"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allApplication",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhcmF5ODE2NDBAbGF5bS5jb20iLCJpZCI6IjY1YzQxMmJhMWZjYTg5ZmRhNTczOGYwZSIsImlhdCI6MTcwNzM0OTcyMiwiZXhwIjoxNzA5OTQxNzIyfQ.xh4J3HPLhiKix2XpfUXBym_GWZgABzr8vP67fBgHdJk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{hosts}}/company/allApplication/65c4142008517c8019e65836",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"company",
+								"allApplication",
+								"65c4142008517c8019e65836"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchCompany",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhcmF5ODE2NDBAbGF5bXJvLmNvbSIsImlkIjoiNjVjNDExODgxZmNhODlmZGE1NzM4ZWY1IiwiaWF0IjoxNzA3MzQ4MzkyLCJleHAiOjE3MDk5NDAzOTJ9.a8V9Rko1ErzalDvTfIShh17HdiprDAkYetEEYR6VlIc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{hosts}}/company/search?search=k",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"company",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "k"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "addJob",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhcmF5ODE2NDBAbGF5bS5jb20iLCJpZCI6IjY1YzQxMmJhMWZjYTg5ZmRhNTczOGYwZSIsImlhdCI6MTcwNzM0OTcyMiwiZXhwIjoxNzA5OTQxNzIyfQ.xh4J3HPLhiKix2XpfUXBym_GWZgABzr8vP67fBgHdJk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"jobTitle\": \"full_stack\",\r\n\t\"jobLocation\": \"hybrid\",\r\n\t\"workingTime\": \"full-time\",\r\n\t\"seniorityLevel\": \"Senior\",\r\n\t\"jobDescription\": \"This is a description of the job to join in it and Communication good.\",\r\n\t\"technicalSkills\": [\"Node.js\",\".Net\", \"JavaScript\", \"MongoDB\",\"React\",\"css\"],\r\n\t\"softSkills\": [\"Teamwork\", \"Communication\"],\r\n    \"companyId\":\"65c4142008517c8019e65836\"\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/job",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "applyToJob",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhcmF5ODE2NDBAbGF5bS5jb20iLCJpZCI6IjY1YzQxMmJhMWZjYTg5ZmRhNTczOGYwZSIsImlhdCI6MTcwNzM0OTcyMiwiZXhwIjoxNzA5OTQxNzIyfQ.xh4J3HPLhiKix2XpfUXBym_GWZgABzr8vP67fBgHdJk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "CV",
+									"type": "file",
+									"src": "/C:/Users/ma042/Downloads/ch8.pdf"
+								},
+								{
+									"key": "userSoftSkills",
+									"value": " [\"Teamwork\", \"Communication\"]",
+									"type": "text"
+								},
+								{
+									"key": "jobId",
+									"value": "65c417130e5fac99fcdf932c",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "65c2b14884fc09acde451617",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "userTechSkills",
+									"value": "[\"Node.js\",\".Net\", \"JavaScript\", \"MongoDB\",\"React\",\"css\"]",
+									"type": "text"
+								},
+								{
+									"key": "jobTitle",
+									"value": "big_data",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{hosts}}/job/applyToJob",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"job",
+								"applyToJob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateJob",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlpa2Fsb241MzVAZ2lyYXRleC5jb20iLCJpZCI6IjY1YzBkYzM2ZTViZWYzNmNjNzAwZTYxYSIsImlhdCI6MTcwNzE3Mzc4NSwiZXhwIjoxNzA5NzY1Nzg1fQ.eAIwvFgNIKIeWYBmsb0XoQh6vqUS16jQ5_NBHFIPMMQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"jobTitle\": \".Net_Back-end Developer\",\r\n\t\"jobLocation\": \"remotely\",\r\n\t\"workingTime\": \"part-time\",\r\n\t\"seniorityLevel\": \"Senior\",\r\n\t\"jobDescription\": \"This is a description of the job.\",\r\n\t\"technicalSkills\": [\"Node.js\", \"JavaScript\", \"MongoDB\",\"Database\"],\r\n\t\"softSkills\": [\"Teamwork\", \"Communication\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/job/65c239b285ce86e77733d620",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"job",
+								"65c239b285ce86e77733d620"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Job",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhcmF5ODE2NDBAbGF5bS5jb20iLCJpZCI6IjY1YzQxMmJhMWZjYTg5ZmRhNTczOGYwZSIsImlhdCI6MTcwNzM0OTcyMiwiZXhwIjoxNzA5OTQxNzIyfQ.xh4J3HPLhiKix2XpfUXBym_GWZgABzr8vP67fBgHdJk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/job/65c4173c0e5fac99fcdf933b",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"job",
+								"65c4173c0e5fac99fcdf933b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "softDelete",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/job/65be34372ec1b9c539d792eb",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"job",
+								"65be34372ec1b9c539d792eb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getJobWithCompany",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhcmF5ODE2NDBAbGF5bS5jb20iLCJpZCI6IjY1YzQxMmJhMWZjYTg5ZmRhNTczOGYwZSIsImlhdCI6MTcwNzM0OTcyMiwiZXhwIjoxNzA5OTQxNzIyfQ.xh4J3HPLhiKix2XpfUXBym_GWZgABzr8vP67fBgHdJk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/job/getAll",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"job",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getJobWithOneCompany",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlpa2Fsb241MzVAZ2lyYXRleC5jb20iLCJpZCI6IjY1YzBkYzM2ZTViZWYzNmNjNzAwZTYxYSIsImlhdCI6MTcwNzE3Mzc4NSwiZXhwIjoxNzA5NzY1Nzg1fQ.eAIwvFgNIKIeWYBmsb0XoQh6vqUS16jQ5_NBHFIPMMQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/job/one?companyName=we",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"job",
+								"one"
+							],
+							"query": [
+								{
+									"key": "companyName",
+									"value": "we"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllJobsFilter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhcmF5ODE2NDBAbGF5bS5jb20iLCJpZCI6IjY1YzQxMmJhMWZjYTg5ZmRhNTczOGYwZSIsImlhdCI6MTcwNzM0OTcyMiwiZXhwIjoxNzA5OTQxNzIyfQ.xh4J3HPLhiKix2XpfUXBym_GWZgABzr8vP67fBgHdJk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/job?jobTitle=Front_end",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"job"
+							],
+							"query": [
+								{
+									"key": "workingTime",
+									"value": "part-time",
+									"disabled": true
+								},
+								{
+									"key": "jobLocation",
+									"value": "onsite",
+									"disabled": true
+								},
+								{
+									"key": "seniorityLevel",
+									"value": "senior",
+									"disabled": true
+								},
+								{
+									"key": "jobTitle",
+									"value": "Front_end"
+								},
+								{
+									"key": "technicalSkills",
+									"value": "javascript",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "onsite",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhcmF5ODE2NDBAbGF5bXJvLmNvbSIsImlkIjoiNjVjNDExODgxZmNhODlmZGE1NzM4ZWY1IiwiaWF0IjoxNzA3MzQ4MzkyLCJleHAiOjE3MDk5NDAzOTJ9.a8V9Rko1ErzalDvTfIShh17HdiprDAkYetEEYR6VlIc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"M07amed\",\r\n    \"lastName\": \"Ali El_said\",\r\n    \"recoveryEmail\": \"mostafa_alli034@gmail.com\",\r\n    \"email\": \"varay81640@laymro.com\",\r\n    \"dob\": \"2001-07-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/user",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "softDelete",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlpa2Fsb241MzVAZ2lyYXRleC5jb20iLCJpZCI6IjY1YzBkYzM2ZTViZWYzNmNjNzAwZTYxYSIsImlhdCI6MTcwNzEzODE4NCwiZXhwIjoxNzA5NzMwMTg0fQ.Z6viJaHX3hotSYI0pVe1DktXG_dl7m1Ic4VI3LJgqio",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/user/softDelete",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"user",
+								"softDelete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAccount",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlpa2Fsb241MzVAZ2lydGV4LmNvbSIsImlkIjoiNjVjMTcyMmQxNDhmOTRlMzU5NTA2YThhIiwiaWF0IjoxNzA3MjYxMzg4LCJleHAiOjE3MDk4NTMzODh9.xwz8ycwJPZMcfDzUTdMmPOtT_sV3e5J3M3mI7u6G5kE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/user/deleteAccount",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"user",
+								"deleteAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserAccountData",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZhcmF5ODE2NDBAbGF5bXJvLmNvbSIsImlkIjoiNjVjNDExODgxZmNhODlmZGE1NzM4ZWY1IiwiaWF0IjoxNzA3MzQ4MzkyLCJleHAiOjE3MDk5NDAzOTJ9.a8V9Rko1ErzalDvTfIShh17HdiprDAkYetEEYR6VlIc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/user/getUserAccountData",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"user",
+								"getUserAccountData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfileData",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlpa2Fsb241MzVAZ2lyYXRleC5jb20iLCJpZCI6IjY1YzBkYzM2ZTViZWYzNmNjNzAwZTYxYSIsImlhdCI6MTcwNzEzODE4NCwiZXhwIjoxNzA5NzMwMTg0fQ.Z6viJaHX3hotSYI0pVe1DktXG_dl7m1Ic4VI3LJgqio",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/user/getProfileData?userId=65c412ba1fca89fda5738f0e&username=m07amed_ali el_said",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"user",
+								"getProfileData"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "65c412ba1fca89fda5738f0e"
+								},
+								{
+									"key": "email",
+									"value": "copopi6849@bitofee.com",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "m07amed_ali el_said"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accounts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "COMPANY__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlpa2Fsb241MzVAZ2lyYXRleC5jb20iLCJpZCI6IjY1YzBkYzM2ZTViZWYzNmNjNzAwZTYxYSIsImlhdCI6MTcwNzEzODE4NCwiZXhwIjoxNzA5NzMwMTg0fQ.Z6viJaHX3hotSYI0pVe1DktXG_dl7m1Ic4VI3LJgqio",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hosts}}/user/accounts?recoveryEmail=mostafa_alli034@gmail.com",
+							"host": [
+								"{{hosts}}"
+							],
+							"path": [
+								"user",
+								"accounts"
+							],
+							"query": [
+								{
+									"key": "recoveryEmail",
+									"value": "mostafa_alli034@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
